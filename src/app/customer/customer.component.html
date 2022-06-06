@@ -1,0 +1,85 @@
+<div class="container">
+    <div class="card mt-5" style="align-items : center;">
+    <h1> Admin Dashboard </h1>
+    </div>
+
+    <div class="card mt-5" style="padding: 20px;">
+        <form #registerForm="ngForm" (ngSubmit)="register(registerForm)">
+            <!--<div class="form-group">
+                <label for="name">OrderId :</label>
+                <input type="number" #id (ngModel)="id" name="id" id="id" class="form-control" placeholder="OrderId">
+
+            </div>-->
+            <div class="form-group">
+                <label for="customername">CustomerName :</label>
+                <input type="text" #customername (ngModel)="customername" name="customername" id="customername" class="form-control" placeholder="CustomerName">
+
+            </div>
+            <div class="form-group">
+                <label for="mobileNumber">CustomerMobileNumber :</label>
+                <input type="number" #mobileNumber (ngModel)="mobileNumber" name="mobileNumber" id="mobileNumber" class="form-control" placeholder="CustomerMobileNumber">
+
+            </div>
+            <div class="form-group">
+                <label for="location">Location :</label>
+                <input type="text" #location (ngModel)="location" name="location" id="location" class="form-control" placeholder="Location">
+
+            </div>
+            <div class="form-group">
+                <label for="pizzaname">PizzaName :</label>
+                <input type="text" #pizzaName (ngModel)="pizzaName" name="pizzaName" id="pizzaName" class="form-control" placeholder="PizzaName">
+
+            </div>
+            <div class="form-group">
+                <label for="amount">OrderAmount :</label>
+                <input type="number" #amount (ngModel)="amount" name="amount" id="amount" class="form-control" placeholder="OrderAmount">
+
+            </div>
+            <div class="form-group">
+                <label for="date">OrderDate :</label>
+                <input type="date" #date (ngModel)="date" name="date" id="date" class="form-control" placeholder="OrderDate">
+
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Register" class="btn btn-primary w-100">
+            </div>
+
+        </form>
+
+    </div>
+
+
+    <div class="mt-5">
+        <table class="table table-bordered">
+            <thead class="thead">
+                <tr>
+                     <th>OrderId</th>
+                     <th>CustomerName</th>
+                     <th>CustomerMobileNumber</th>
+                     <th>Location</th>
+                     <th>PizzaName</th>
+                     <th>OrderAmount</th>
+                     <th>OrderDate</th>
+                     <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody class="tbody">
+                <tr *ngFor="let customer of customerDetails">
+                    <td>{{customer.orderId}}</td>
+                    <td>{{customer.customerName}}</td>
+                    <td>{{customer.customerMobileNumber}}</td>
+                    <td>{{customer.location}}</td>
+                    <td>{{customer.pizzaName}}</td>
+                    <td>{{customer.orderAmount}}</td>
+                    <td>{{customer.orderdDate}}</td>
+                    <td><button type="button" class="btn btn-danger" (click)="deleteCustomer(customer)">Delete</button></td>
+
+                </tr>
+
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
